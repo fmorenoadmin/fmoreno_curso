@@ -1,0 +1,70 @@
+[
+	[
+		{
+			"id":1,
+			"nombre":"Rojo",
+			"codigo":"#FF0000"
+		},
+		{
+			"id":2,
+			"nombre":"Negro",
+			"codigo":"#000000"
+		},
+		{
+			"id":3,
+			"nombre":"Blanco",
+			"codigo":"#ffffff"
+		}
+	]
+],
+[
+	{
+		"id":1,
+		"nombre":"Rojo",
+		"codigo":"#FF0000"
+	},
+	{
+		"id":2,
+		"nombre":"Negro",
+		"codigo":"#000000"
+	},
+	{
+		"id":3,
+		"nombre":"Blanco",
+		"codigo":"#ffffff"
+	}
+],
+[
+	[
+		{
+			"id":1,
+			"nombre":"Rojo",
+			"codigo":"#FF0000"
+		},
+		{
+			"id":2,
+			"nombre":"Negro",
+			"codigo":"#000000"
+		},
+		{
+			"id":3,
+			"nombre":"Blanco",
+			"codigo":"#ffffff"
+		}
+	],
+	{
+		"id":1,
+		"nombre":"Rojo",
+		"codigo":"#FF0000"
+	},
+	{
+		"id":2,
+		"nombre":"Negro",
+		"codigo":"#000000"
+	},
+	{
+		"id":3,
+		"nombre":"Blanco",
+		"codigo":"#ffffff"
+	}
+]
