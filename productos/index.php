@@ -1,8 +1,8 @@
 <?php
 	session_start();
 	$rut ='../';//accedo a mi carpeta raiz
-	$pagina ='Formularios';//El nombre de la vista en la cual te encuentras
-	$action ='20_formularios.php';//El archivo de accion al que va apuntar o se va a dirigir
+	$pagina ='Lista de Productos';//El nombre de la vista en la cual te encuentras
+	$action ='productos.php';//El archivo de accion al que va apuntar o se va a dirigir
 	require_once($rut.'0code.php');//esta requiriendo a 0code.php que se encuentra en la raiz y que al mismo tiempo esta requiereiendo a constat.php
 ?>
 <!DOCTYPE html>
@@ -11,44 +11,43 @@
 	<meta charset="utf-8">
 	<title><?= $pagina.TIT; ?></title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/c1583151af.js" crossorigin="anonymous"></script>
 	<?php
 		require_once($rut.'0mens.php');
 	?>
 </head>
 <body>
-	<?php 
-	//Las variables super globals de php: $_GET $_POST $_REQUEST se utilizan para recopilar datos de los formularios
-	?>
 	<div class="container pt-4 mt-4">
 		<div class="row pt-4 mt-4">
-			<div class="col-sm-4 offset-sm-4">
-				<?php if (isset($_SESSION['result'])){ ?>
-					<?php
+			<?php
+				if (isset($_SESSION['result'])){
+					echo '<div class="col-sm-12">';
 						switch ($_SESSION['result']) {
 							case 1:
-								echo $_inf;
+								echo '<div class="alert alert-success" role="alert">'.$_sms.'</div>';
+							break;
+							case 2:
+								echo '<div class="alert alert-warning" role="alert">'.$_sms.'</div>';
 							break;
 							default:
-								echo $_sms;
+								echo '<div class="alert alert-danger" role="alert">'.$_sms.'</div>';
 							break;
 						}
-					?>
-				<?php }else{ ?>
-					<form class="card row" method="POST" enctype="multipart/form-data" action="<?= ACTI.$action; ?>">
-						<div class="card-header">
-							<h2 class="card-title">HOLA</h2>
-						</div>
-						<div class="card-body">
-							<div class="form-group">
-								<label class="form-control-label">Ingresa tu nombre</label>
-								<input type="text" name="nombre" class="form-control">
-							</div>
-						</div>
-						<div class="card-footer text-center">
-							<button type="submit" name="enviar" class="btn btn-success">Enviar</button>	
-						</div>
-					</form>
-				<?php } ?>
+					echo '</div>';
+				}
+			?>
+			<div class="col-sm-12 row">
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4">
+					<h3><?= $pagina; ?></h3>
+				</div>
+				<div class="col-sm-4 text-right">
+					<a href="nuevo/" class="btn btn-success"><i class="fas fa-plus"></i></a>
+				</div>
+			</div>
+			<div id="div1" class="col-sm-12">
+				<table class="table datatable table-hover table-bordered">
+				</table>
 			</div>
 		</div>
 	</div>
@@ -59,5 +58,6 @@
 </body>
 </html>
 <?php
+	unset($_SESSION['Mysqli_Error']);
 	unset($_SESSION['result']);
 ?>

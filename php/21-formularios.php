@@ -2,7 +2,7 @@
 	session_start();
 	$rut ='../';//accedo a mi carpeta raiz
 	$pagina ='Formularios';//El nombre de la vista en la cual te encuentras
-	$action ='20_formularios.php';//El archivo de accion al que va apuntar o se va a dirigir
+	$action ='21_formularios.php';//El archivo de accion al que va apuntar o se va a dirigir
 	require_once($rut.'0code.php');//esta requiriendo a 0code.php que se encuentra en la raiz y que al mismo tiempo esta requiereiendo a constat.php
 ?>
 <!DOCTYPE html>
@@ -22,33 +22,47 @@
 	<div class="container pt-4 mt-4">
 		<div class="row pt-4 mt-4">
 			<div class="col-sm-4 offset-sm-4">
-				<?php if (isset($_SESSION['result'])){ ?>
-					<?php
+				<form class="card row" method="POST" enctype="multipart/form-data" action="<?= ACTI.$action; ?>">
+					<div class="card-header">
+						<h2 class="card-title">HOLA</h2>
+					</div>
+					<div class="card-body">
+						<div class="form-group">
+							<label class="form-control-label">Ingresa tu nombres</label>
+							<input type="text" name="nombres" class="form-control" required="required">
+						</div>
+						<div class="form-group">
+							<label class="form-control-label">Ingresa tu apellidos</label>
+							<input type="text" name="apellidos" class="form-control" required="required">
+						</div>
+						<div class="form-group">
+							<label class="form-control-label">Ingresa tu telefono</label>
+							<input type="tel" name="telefono" class="form-control">
+						</div>
+						<div class="form-group">
+							<label class="form-control-label">Ingresa tu correo</label>
+							<input type="email" name="correo" class="form-control" required="required">
+						</div>
+					</div>
+					<div class="card-footer text-center">
+						<button type="submit" name="enviar" class="btn btn-success">Enviar</button>	
+					</div>
+				</form>
+				<?php
+					if (isset($_SESSION['result'])){
 						switch ($_SESSION['result']) {
 							case 1:
-								echo $_inf;
+								echo '<div class="alert alert-success" role="alert">'.$_sms.'</div>';
+							break;
+							case 2:
+								echo '<div class="alert alert-warning" role="alert">'.$_sms.'</div>';
 							break;
 							default:
-								echo $_sms;
+								echo '<div class="alert alert-danger" role="alert">'.$_sms.'</div>';
 							break;
 						}
-					?>
-				<?php }else{ ?>
-					<form class="card row" method="POST" enctype="multipart/form-data" action="<?= ACTI.$action; ?>">
-						<div class="card-header">
-							<h2 class="card-title">HOLA</h2>
-						</div>
-						<div class="card-body">
-							<div class="form-group">
-								<label class="form-control-label">Ingresa tu nombre</label>
-								<input type="text" name="nombre" class="form-control">
-							</div>
-						</div>
-						<div class="card-footer text-center">
-							<button type="submit" name="enviar" class="btn btn-success">Enviar</button>	
-						</div>
-					</form>
-				<?php } ?>
+					}
+				?>
 			</div>
 		</div>
 	</div>

@@ -180,6 +180,14 @@
 			$_REQUEST	/cusro_fmoreno/php/18-variables-super-globals.php?a=4&b=12&b=12&b=12&b=12&b=12&b=12&b=12
 			$_POST 		/cusro_fmoreno/php/18-variables-super-globals.php
 			$_GET		/cusro_fmoreno/php/18-variables-super-globals.php?a=4&b=12&b=12&b=12&b=12&b=12&b=12&b=12
+			$_SESSION	Son un arreglo(array). que guardan información de manera temporal(mientras que el usuario este activo en la página o sistema).
+			$_SESSION["user"] = 'nombre de usuario';
+			------------------------------------------------------------
+			Para que tu puedas utilizar sesiones en una página web.
+			Necesitas invocar a la función de PHP: session_start();
+			//session start - inicia las sesiones en esta vista.
+			**para poder colocarla correctamente session_start() debe ser colocada siempre en la segunda linea de tu código
+			------------------------------------------------------------
 		*/
 	?>
 </body>
