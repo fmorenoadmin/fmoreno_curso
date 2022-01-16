@@ -1,6 +1,6 @@
 <?php
-	/**
-	 * Las clases son unas funciones de php en las cuales podemos ingresar mas funcones, de esta manera podemos hacer trabjaos multiples para una clase 
+	/**Las clases son unas funciones de php en las cuales podemos ingresar mas fun
+	 * cones, de esta manera podemos hacer trabjaos multiples para una clase 
 	 * $inf .= 'hola';
 	 * $inf .= ' numdo';
 	 * echo $inf; // hola mundo

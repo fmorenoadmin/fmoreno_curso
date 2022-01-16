@@ -45,6 +45,8 @@
 						</div>
 					</div>
 					<div class="card-footer text-center">
+						<input type="hidden" name="sid" value="<?= base64_encode($sid); ?>">
+						<input type="hidden" name="url" value="<?= base64_encode($location); ?>">
 						<button type="submit" name="enviar" class="btn btn-success">Enviar</button>	
 					</div>
 				</form>

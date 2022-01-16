@@ -1,0 +1,8 @@
+Los siguientes
+AJAX = Javascript y XML Asincronos
+CSS = Hojas de estilo en cascada
+HTML = Lenguaje de marcado de hipertexto
+PHP = Preprocesador de Hipertexto
+SQL = Lenguaje de consulta estructurado
+SVG = Gráficos vectoriales escalables
+XML = Lenguaje de marcado extensible

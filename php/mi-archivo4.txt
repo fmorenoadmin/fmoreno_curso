@@ -1,0 +1,9 @@
+FullStack: F:100/B:100
+FullStack: F:50/B:100
+FullStack: F:100/B:50
+FrontEnd: 100
+BackEnd: 100
+--------------------------
+<5 años: 15 - 28 Soles / hora
+>=6 y <10 años: 29 - 45 Soles / hora
+>10 años: >45 Soles / hora

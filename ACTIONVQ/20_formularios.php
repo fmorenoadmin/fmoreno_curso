@@ -13,7 +13,7 @@
 		//$_cl1 = new formularios_20();
 		$_cl1 = new $cl1();//Instanciando mi clase, el new es para encapsular una clase dentro de una varibale
 		//--------------------------------
-		$nombre = $_POST['nombre'];
+		$nombre = filter_var($_POST['nombre'], FILTER_SANITIZE_STRING);
 		//--------------------------------
 		$data = $_cl1->saludo($nombre);
 		//--------------------------------
